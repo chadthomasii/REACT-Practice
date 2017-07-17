@@ -45,30 +45,15 @@
         <script type="text/babel">
 
 
-            //Initialize component
-            var HelloWorld = React.createClass
-            ({
-                //Call render
-                render: function()
-                {
-                    return(
+            
 
-                        <h1>Hello {this.props.greetTarget}!</h1>
-                    );
-
-                }
-
-            });
-
-            //var destination = document.querySelector("#container");
+            var destination = document.querySelector("#container");
 
             ReactDOM.render
             (   <div>
-                    <HelloWorld greetTarget="Chad"/>
-                    <HelloWorld greetTarget="Nick"/>
-                    <HelloWorld greetTarget="Dave"/>
+                    
                 </div>,
-                document.querySelector("#container")
+                destination
                 
             );
 
