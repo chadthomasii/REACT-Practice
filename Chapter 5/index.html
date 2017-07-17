@@ -25,20 +25,7 @@
 
             }
 
-            .letter
-            {
-                padding: 10px;
-                margin: 10px;
-                background-color: #ffea00;
-                color: #333;
-                display:inline-block;
-                font-family: monospace;
-                font-size: 4em;
-                border-bottom: 3px solid #ffd600;
-                cursor: pointer;
-                
-            }
-
+            
 
         </style>
 
@@ -55,33 +42,62 @@
 
             var destination = document.querySelector("#container");
 
-            var Letter = React.createClass
+
+            var Square = React.createClass
             ({
                 render: function() 
                 { 
-                    
+                    return (
+
+                        <div>
+                            
+                        </div>
+
+                    );   
+                }
+            });
+
+            var Label = React.createClass
+            ({
+                render: function() 
+                { 
+                    return (
+
+                        <div>
+                            
+                        </div>
+
+                    );   
+                }
+            });
+
+            var Card = React.createClass
+            ({
+                render: function() 
+                { 
+                    var cardStyle =
+                    {
+                        height: 200,
+                        width: 150,
+                        padding: 0,
+                        backgroundColor: "#FFF",
+                        WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+                        filter: "drop-shadow(0px 0px 5px #666)"
+                    }
 
                     return (
 
-                        <div className= "letter">
-                            {this.props.children}
+                        <div style = {cardStyle}>
+                            
                         </div>
 
-                    );
-                    
+                    );   
                 }
-
-
-
             });
 
             ReactDOM.render
             (   <div>
-                    <Letter>A</Letter>
-                    <Letter>E</Letter>
-                    <Letter>I</Letter>
-                    <Letter>O</Letter>
-                    <Letter>U</Letter>
+                    
                     
                 </div>,
                 destination
