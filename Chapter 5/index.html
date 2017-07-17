@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>React Components</title>
+        <title>Complex Components</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="../js/react.min.js"></script>
@@ -17,13 +17,35 @@
                 margin: 0;
                 padding:0;
             }
+            #heading
+            {
+                text-align: center;
+                font-size: 4em;
+                background: #EEE;
+                margin: 0;
+                padding-top: 10px;
+            }
+
             #container
             {
                 padding: 50px;
                 background-color: #EEE;
                 text-align: center;
-
+               
+              
+                
             }
+            .palette
+            {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                
+            }
+            
+
+            
 
             
 
@@ -32,7 +54,7 @@
         
     </head>
     <body>
-
+        <h1 id="heading">Material Design Palette</h1>
         <div id="container">
 
         </div>
@@ -47,9 +69,15 @@
             ({
                 render: function() 
                 { 
+                    var squareStyle =
+                    {
+                        height: 150,
+                        backgroundColor: this.props.color
+                    };
+
                     return (
 
-                        <div>
+                        <div style={squareStyle}>
                             
                         </div>
 
@@ -60,12 +88,18 @@
             var Label = React.createClass
             ({
                 render: function() 
-                { 
+                {
+                    var labelStyle =
+                    {
+                        fontFamily: "sans-serif",
+                        fontWeight: "bold",
+                        padding: 13,
+                        margin: 0
+                    }
+
                     return (
 
-                        <div>
-                            
-                        </div>
+                        <p style={labelStyle}>{this.props.color}</p>
 
                     );   
                 }
@@ -80,15 +114,17 @@
                         height: 200,
                         width: 150,
                         padding: 0,
+                        margin: 20,
                         backgroundColor: "#FFF",
-                        WebkitFilter: "drop-shadow(0px 0px 5px #666)",
-                        filter: "drop-shadow(0px 0px 5px #666)"
-                    }
+                        WebkitFilter: "drop-shadow(0px 0px 4px #666)",
+                        filter: "drop-shadow(0px 0px 4px #666)"
+                    };
 
                     return (
 
                         <div style = {cardStyle}>
-                            
+                            <Square color={this.props.color}/>
+                            <Label color={this.props.color}/>
                         </div>
 
                     );   
@@ -96,8 +132,25 @@
             });
 
             ReactDOM.render
-            (   <div>
-                    
+            (   <div className="palette">
+                    <Card color="#F44336"/>
+                    <Card color="#E91E63"/>
+                    <Card color="#9C27B0"/>
+                    <Card color="#3F51B5"/>
+                    <Card color="#2196F3"/>
+                    <Card color="#03A9F4"/>
+                    <Card color="#00BCD4"/>
+                    <Card color="#009688"/>
+                    <Card color="#4CAF50"/>
+                    <Card color="#8BC34A"/>
+                    <Card color="#CDDC39"/>
+                    <Card color="#FFEB3B"/>
+                    <Card color="#FFC107"/>
+                    <Card color="#FF9800"/>
+                    <Card color="#FF5722"/>
+                    <Card color="#795548"/>
+                    <Card color="#9E9E9E"/>
+                    <Card color="#607D8B"/>
                     
                 </div>,
                 destination
